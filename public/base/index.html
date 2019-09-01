@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>browserCamamera sample01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <style>
+        html {
+          height: 100%;
+        }
+        body {
+          margin: 0 auto;
+          height: 100%;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    </style>
+  </head>
+  <body>
+    <video id="video" autoplay playsinline="true"></video>
+    <script>
+      var video = document.getElementById('video');
+      var constraints = {
+          audio: false,
+          video: {
+              // スマホのバックカメラを使用
+              facingMode: 'environment'
+          }
+      };
+      //  カメラの映像を取得
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then((stream) => {
+          video.srcObject = stream;
+        })
+        .catch((err) => {
+          window.alert(err.name + ': ' + err.message);
+        });
+    </script>
+  </body>
+</html>

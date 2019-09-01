@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>browserCamamera sample01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <style>
+        html {
+          height: 100%;
+        }
+        body {
+          margin: 0 auto;
+          height: 100%;
+        }
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+        }
+        canvas {
+          z-index: 1000;
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: auto;
+          width: 100%;
+          height: 100%;
+          object-fit: fill;          
+          opacity: 1;
+          -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+  </head>
+  <body>
+
+    <video id="video" autoplay playsinline="true"></video>
+    <canvas id="canvas"></canvas>
+
+    <script src="../vendor/three.min.js"></script>
+    <script src="../vendor/DeviceOrientationControls.js"></script>
+    <script src="../camera.js"></script>
+    <script>
+      var elCanvas = document.querySelector('#canvas')
+      var camera, light, scene, renderer, controls
+      var currentTime
+      var mesh = []
+
+      /**
+       * ランダムの値を生成
+       */
+      var createRandom = function (min, max) {
+        return Math.floor(Math.random() * (max + 1 - min)) + min
+      }
+
+      /**
+       * windowのリサイズイベント
+       */
+      var onWindowResize = function () {
+        camera.aspect = window.innerWidth / window.innerHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(window.innerWidth, window.innerHeight)
+      }
+
+      /**
+       * メッシュを生成
+       */
+      var createMesh = function () {
+        // var texture = new THREE.TextureLoader().load('images/hatena.jpg')
+        // var material = new THREE.MeshBasicMaterial({ map: texture })
+        var geometry = new THREE.BoxBufferGeometry(100, 100, 100)
+        var material = new THREE.MeshLambertMaterial({ color: 0x00ff00 })
+        var meshBox = new THREE.Mesh(geometry, material)
+        meshBox.position.y += 300
+        meshBox.position.z += -1000
+        scene.add(meshBox)
+        mesh.push(meshBox)
+      }
+
+      /**
+       * 初期設定
+       */
+      var init = function () {
+        // カメラ設定
+        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 4000)
+        camera.position.y = 300
+        // camera.position.z = 1000
+
+        // ジャイロセンサーとカメラを紐づける
+        controls = new THREE.DeviceOrientationControls(camera, true)
+
+        // シーン追加
+        scene = new THREE.Scene()
+
+        // ライトを追加
+        light = new THREE.DirectionalLight(0xffffff, 1)
+        light.position.set(0, 1000, 0)
+        scene.add(light)
+
+        // レンダラーを追加
+        renderer = new THREE.WebGLRenderer({ canvas: elCanvas, antialias: true, alpha: true })
+        renderer.setPixelRatio(window.devicePixelRatio)
+        renderer.setSize(window.innerWidth, window.innerHeight)
+        window.addEventListener('resize', onWindowResize)
+
+        createMesh()
+      }
+
+      /**
+       * 描画
+       */
+      var render = function () {
+        currentTime += 1
+
+        // コントローラー更新
+        controls.update()
+
+        // オブジェクト
+        if (mesh.length > 0) {
+            // オブジェクトを回転
+            for (var i = 0; i < mesh.length; i++) {
+                mesh[i].rotation.x += 0.01
+                mesh[i].rotation.y += 0.01
+                mesh[i].rotation.z += 0.01
+            }
+        }
+
+        renderer.render(scene, camera)
+        requestAnimationFrame(render)
+      }
+
+      init()
+      render()
+    </script>
+
+  </body>
+</html>
