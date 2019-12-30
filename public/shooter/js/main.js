@@ -130,7 +130,8 @@ function init () {
     }, createDelayTime)
 
     // clickでショットを発車
-    window.addEventListener('click', () => {
+    var mytap = window.ontouchstart === null ? "touchstart" : "click"
+    window.addEventListener(mytap, () => {
         let shot = new Shot()
         scene.add(shot)
         shotList.push(shot)
