@@ -1,0 +1,22 @@
+{
+  "name": "web-ar",
+  "version": "1.0.0",
+  "description": "WebAR sample.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuki-Sakaguchi/web-ar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yuki-Sakaguchi/web-ar/issues"
+  },
+  "homepage": "https://github.com/Yuki-Sakaguchi/web-ar#readme",
+  "dependencies": {
+    "game-capsule": "0.0.5"
+  }
+}
