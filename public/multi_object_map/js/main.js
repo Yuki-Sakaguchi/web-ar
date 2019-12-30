@@ -150,7 +150,7 @@ window.addEventListener("deviceorientation", (dat) => {
     gamma = dat.gamma;  // y軸（上下）まわりの回転の角度（右に傾けるとプラス）
 });
 
-let game = new Leonardo({
+let game = new GameCapsule({
     target: '#nav',
     isRetina: true,
     isTouch: true
