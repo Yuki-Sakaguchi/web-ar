@@ -26,6 +26,7 @@ canvas {
 }
 #nav {
   z-index: 1001;
+  pointer-events: none;
 }
 .result {
   position: fixed;
