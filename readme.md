@@ -1,10 +1,10 @@
 # WebAR
 
 # DEMO
-- [green box](https://yuki-sakaguchi.github.io/web-ar/public/random_object/)
-- [surper mario hatena box](https://yuki-sakaguchi.github.io/web-ar/public/super_mario/)
-- [multi object map](https://yuki-sakaguchi.github.io/web-ar/public/multi_object_map/)
-- [object shooter](https://yuki-sakaguchi.github.io/web-ar/public/shooter/)
+- [green box](https://yuki-sakaguchi.github.io/web-ar/public/random_object/index.html)
+- [surper mario hatena box](https://yuki-sakaguchi.github.io/web-ar/public/super_mario/index.html)
+- [multi object map](https://yuki-sakaguchi.github.io/web-ar/public/multi_object_map/index.html)
+- [object shooter](https://yuki-sakaguchi.github.io/web-ar/public/shooter/index.html)
 
 # 開発
 ```
