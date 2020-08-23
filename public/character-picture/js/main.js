@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const height = 588
       ctx.scale(zoom, zoom)
       ctx.drawImage(chara, 0, 0, width, height, 0, window.innerHeight + (height*zoom), width, height)
+      ctx.scale(1, 1)
     } else {
       const width = 310
       const height = 345
