@@ -5,7 +5,7 @@ var video = null
 var constraints = {
   audio: false,
   video: {
-    facingMode: setCameraMode() , // スマホのバックカメラを使用
+    facingMode: 'user',
     frameRate: { ideal: 10, max: 15 } // フレームレートを下げる
   }
 };
