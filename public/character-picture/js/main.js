@@ -22,9 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let zoom = 0.5 
       const width = 400
       const height = 588
-      ctx.scale(zoom, zoom)
-      ctx.drawImage(chara, 0, 0, width, height, 0, window.innerHeight + (height*zoom), width, height)
-      ctx.scale(1, 1)
+      ctx.drawImage(chara, 0, 0, width, height, 0, window.innerHeight - height, width, height)
     } else {
       const width = 310
       const height = 345
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function shoot () {
-    
     const [w, h] = setSize()
     if (video.getAttribute('style') == 'transform: scaleX(-1)') {
       // 動画が反転している場合には反転させてからcanvasに描画
