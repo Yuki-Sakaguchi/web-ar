@@ -4,7 +4,7 @@
 - [green box](https://yuki-sakaguchi.github.io/web-ar/public/random_object/index.html)
   - ただの箱
 - [surper mario hatena box](https://yuki-sakaguchi.github.io/web-ar/public/super_mario/index.html)
-  - マリオの音楽再生とはてなボックス
+  - マリオの音楽再生とはてなボックス
 - [multi object map](https://yuki-sakaguchi.github.io/web-ar/public/multi_object_map/index.html)
   - オブジェクトを生成してその位置のマップを表示
 - [object shooter](https://yuki-sakaguchi.github.io/web-ar/public/shooter/index.html)
