@@ -43,7 +43,7 @@ function syncCamera (video, isFront) {
     .catch(failure)
 }
 
-document.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   video = document.getElementById('video');
   syncCamera()
 })

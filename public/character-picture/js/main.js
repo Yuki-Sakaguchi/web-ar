@@ -1,4 +1,4 @@
-document.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.querySelector('#canvas')
   const video = document.querySelector('#video')
   const shootButton = document.querySelector('#shoot')
