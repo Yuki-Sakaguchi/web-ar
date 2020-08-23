@@ -11,6 +11,8 @@
   - オブジェクトをシューティング
 - [picture](https://yuki-sakaguchi.github.io/web-ar/public/picture/index.html)
   - カメラで写真を撮る
+- [character-picture](https://yuki-sakaguchi.github.io/web-ar/public/character-picture/image.html)
+  - キャラクターと一緒に写真を撮る
   
 
 # 開発

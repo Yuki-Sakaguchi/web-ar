@@ -20,6 +20,11 @@ function failure (err) {
 }
 
 function setCameraMode () {
+  if (useFront) {
+    video.setAttribute('style', 'transform: scaleX(-1)')
+  } else {
+    video.removeAttribute('style')
+  }
   return useFront ? 'user' : { exact: "environment" }
 }
 
