@@ -1,7 +1,7 @@
 let useFront = false // フロントをつかっているかどうか 
 let tmpStream = null
 
-var video = document.getElementById('video');
+var video = null
 var constraints = {
   audio: false,
   video: {
@@ -43,4 +43,7 @@ function syncCamera (video, isFront) {
     .catch(failure)
 }
 
-syncCamera()
+document.addEventListener('load', () => {
+  video = document.getElementById('video');
+  syncCamera()
+})
