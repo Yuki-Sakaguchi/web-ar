@@ -1,13 +1,41 @@
+let useFront = false // フロントをつかっているかどうか 
+let tmpStream = null
+
 var video = document.getElementById('video');
 var constraints = {
   audio: false,
   video: {
-    facingMode: 'environment', // スマホのバックカメラを使用
+    facingMode: setCameraMode() , // スマホのバックカメラを使用
     frameRate: { ideal: 10, max: 15 } // フレームレートを下げる
   }
 };
 
-//  カメラの映像を取得
-navigator.mediaDevices.getUserMedia(constraints)
-  .then((stream) => video.srcObject = stream)
-  .catch((err) => window.alert(err.name + ': ' + err.message))
+function success (stream) {
+  video.srcObject = stream
+  tmpStream = stream
+}
+
+function failure (err) {
+  alert(err.name + ':' + err.message)
+}
+
+function setCameraMode () {
+  return useFront ? 'user' : { exact: "environment" }
+}
+
+function syncCamera (video, isFront) {
+  constraints.video.facingMode = setCameraMode()
+
+  if (tmpStream !== null) {
+    tmpStream.getVideoTracks().forEach(camera => {
+      camera.stop()
+    })
+  }
+
+  //  カメラの映像を取得
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then(success)
+    .catch(failure)
+}
+
+syncCamera()
