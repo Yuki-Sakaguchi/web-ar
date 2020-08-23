@@ -18,16 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setImage () {
-    if (type == 2) {
-      let zoom = 0.5 
-      const width = 400
-      const height = 588
-      ctx.drawImage(chara, 0, 0, width, height, 0, window.innerHeight - height, width, height)
-    } else {
-      const width = 310
-      const height = 345
-      ctx.drawImage(chara, 0, 0, width, height, -30, window.innerHeight - height, width, height)
-    }
+    const width = 310
+    const height = 345
+    ctx.drawImage(chara, 0, 0, width, height, -30, window.innerHeight - height, width, height)
   }
 
   function shoot () {
