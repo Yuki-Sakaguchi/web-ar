@@ -13,7 +13,10 @@
   - カメラで写真を撮る
 - [character-picture](https://yuki-sakaguchi.github.io/web-ar/public/character-picture/image.html)
   - キャラクターと一緒に写真を撮る
-  
+- [image-tracking](https://yuki-sakaguchi.github.io/web-ar/public/image-tracking/image.html)
+  - AR.jsのイメージトラッキング
+    - [NFT Marker Creator（画像の登録）](https://carnaux.github.io/NFT-Marker-Creator/)
+    - [AR.js](https://github.com/AR-js-org/AR.js)
 
 # 開発
 ```
