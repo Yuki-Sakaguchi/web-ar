@@ -6,8 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const img = document.querySelector('#img')
   const ctx = canvas.getContext('2d')
 
-  // 1 = しんちゃん, 2 = どらえもん
-  let type = location.href.indexOf('chara=2') >= 0 ? 2 : 1
+  // 1 = しんちゃん, 2 = どらえもん, logo = ヒプ
+  let type = 1
+  if (location.href.indexOf('chara=2') >= 0) {
+    type = 2
+  } else if (location.href.indexOf('chara=logo') >= 0) {
+    type = 3
+  } else if (location.href.indexOf('chara=logo-white') >= 0) {
+    type = 4 
+  }
 
   function setSize () {
     const w = video.offsetWidth
@@ -60,7 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
   setSize()
 
   const chara = new Image()
-  chara.src = type == 2 ? './images/02.png' : './images/01.png'
+  if (type == 2) {
+    chara.src = './images/02.png'
+  } else if (type == 3) {
+    chara.src = './images/logo_black.png'
+  } else if (type == 4) {
+    chara.src = './images/logo_white.png'
+  } else {
+    chara.src = './images/01.png'
+  }
   chara.onload = () => {
     setImage()
   }
