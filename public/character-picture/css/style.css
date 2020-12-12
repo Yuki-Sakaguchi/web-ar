@@ -80,3 +80,12 @@ canvas {
   padding: 8px 13px;
   font-size: 12px;
 }
+
+.notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  margin: 0;
+  padding: 2px 4px;
+}

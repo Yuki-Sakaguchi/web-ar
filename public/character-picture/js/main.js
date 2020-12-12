@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+  var tettereee = new AudioPlayer('sound/tettereee.mp3')
+
+  /**
+   * Audioプレイヤークラス
+   */
+  function AudioPlayer (sound) {
+      this.audio = new Audio(sound)
+      this.audio.load()
+  }
+  AudioPlayer.prototype.play = function () {
+      this.audio.pause()
+      this.audio.currentTime = 0
+      this.audio.play()
+  }
+  AudioPlayer.prototype.loopPlay = function () {
+      var _this = this
+      this.play()
+      this.audio.addEventListener('ended', function () {
+          _this.audio.play()
+      })
+  }
+
   const canvas = document.querySelector('#canvas')
   const video = document.querySelector('#video')
   const shootButton = document.querySelector('#shoot')
@@ -31,6 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function shoot () {
+    if (type == 2) {
+      tettereee.play();
+    }
+
     const [w, h] = setSize()
     if (video.getAttribute('style') == 'transform: scaleX(-1)') {
       // 動画が反転している場合には反転させてからcanvasに描画
@@ -78,5 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   chara.onload = () => {
     setImage()
+  }
+
+  if (type === 2) {
+    // どらえもんの時は音が出るので注意文言を表示
+    const p = document.createElement('p')
+    p.textContent = '※ 写真を取る時に音が鳴ります'
+    p.classList.add('notice');
+    document.body.appendChild(p);
   }
 })
