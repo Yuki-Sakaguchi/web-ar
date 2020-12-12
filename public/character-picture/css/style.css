@@ -89,3 +89,31 @@ canvas {
   margin: 0;
   padding: 2px 4px;
 }
+
+.draemon .lity-content:after {
+  box-shadow: none;
+}
+
+.draemon .lity {
+  width: 200vh;
+  height: 200vh;
+  left: calc(50% - 100vh);
+  top: calc(50% - 100vh);
+  background-color: yellow;
+  background-image: repeating-conic-gradient( transparent 0, transparent 13deg, #ffab3c 13deg, #ffab3c 16deg ),
+                    repeating-conic-gradient( transparent 0, transparent 20deg, #ffab3c 20deg, #ffab3c 23deg ),
+                    repeating-conic-gradient( transparent 0, transparent 5deg, #ffab3c 5deg, #ffab3c 8deg ),
+                    repeating-conic-gradient( transparent 0, transparent 40deg, #ffab3c 40deg, #ffab3c 44deg ),
+                    repeating-conic-gradient( transparent 0, transparent 10deg, #ffab3c 10deg, #ffab3c 13deg );
+  animation: backgroundAnimation 20s infinite linear;
+}
+
+@keyframes backgroundAnimation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

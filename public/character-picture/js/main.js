@@ -112,5 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     p.textContent = '※ 写真を取る時に音が鳴ります'
     p.classList.add('notice');
     document.body.appendChild(p);
+    document.body.classList.add('draemon');
   }
 })
