@@ -94,7 +94,8 @@ canvas {
   box-shadow: none;
 }
 
-.draemon .lity {
+.draemon .modal-bg {
+  position: fixed;
   width: 200vh;
   height: 200vh;
   left: calc(50% - 100vh);
@@ -106,6 +107,10 @@ canvas {
                     repeating-conic-gradient( transparent 0, transparent 40deg, #ffab3c 40deg, #ffab3c 44deg ),
                     repeating-conic-gradient( transparent 0, transparent 10deg, #ffab3c 10deg, #ffab3c 13deg );
   animation: backgroundAnimation 20s infinite linear;
+}
+
+.draemon .modal-content {
+  background-color: transparent;
 }
 
 @keyframes backgroundAnimation {
