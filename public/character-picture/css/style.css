@@ -111,6 +111,8 @@ canvas {
 
 .draemon .modal-content {
   background-color: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes backgroundAnimation {
