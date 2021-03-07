@@ -18,6 +18,8 @@
   - AR.jsのイメージトラッキング
     - [NFT Marker Creator（画像の登録）](https://carnaux.github.io/NFT-Marker-Creator/)
     - [AR.js](https://github.com/AR-js-org/AR.js)
+- [color-dropper](https://yuki-sakaguchi.github.io/web-ar/public/color-dropper/image.html)
+  - カメラで色を取得する
 
 # 開発
 ```
