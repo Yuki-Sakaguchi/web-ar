@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         }
         return n
-    })(inputColor.value, 1);
+    })(inputColor, 1);
 
     const i = `#${l[0]}${l[1]}${l[2]}`
     const d = () => {
