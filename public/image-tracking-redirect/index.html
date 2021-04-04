@@ -1,5 +1,5 @@
-<script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
-
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 <style>
   .arjs-loader {
     height: 100%;
@@ -22,12 +22,13 @@
 </style>
 
 <!-- rawgithack development URL -->
-<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
 <script>
   AFRAME.registerComponent('markerhandler', {
     init: function () {
+      console.log('set');
       this.el.sceneEl.addEventListener('markerFound', () => {
         // redirect to custom URL
+        console.log('markerFound');
         if (confirm('画像が見つかりました！特典映像をどうぞ！')) {
           window.location = 'https://www.youtube.com/watch?v=jgLkrKGxATQ';
         }
