@@ -18,6 +18,9 @@
   - AR.jsのイメージトラッキング
     - [NFT Marker Creator（画像の登録）](https://carnaux.github.io/NFT-Marker-Creator/)
     - [AR.js](https://github.com/AR-js-org/AR.js)
+- [image-tracking-redirect](https://yuki-sakaguchi.github.io/web-ar/public/image-tracking-redirect/image.html)
+  - AR.jsのイメージトラッキングで画像を認識したらリダイレクトさせる
+  - [画像トラッキングのイベント](https://ar-js-org.github.io/AR.js-Docs/ui-events/#custom-events)はここを参考にした
 - [color-dropper](https://yuki-sakaguchi.github.io/web-ar/public/color-dropper/index.html)
   - カメラで色を取得する
 
