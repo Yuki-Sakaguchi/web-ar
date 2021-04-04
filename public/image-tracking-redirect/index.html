@@ -27,13 +27,13 @@
     init: function () {
       console.log('set');
       this.el.sceneEl.addEventListener('markerFound', () => {
-        // redirect to custom URL
+        // redirect to custom URL e.g. google.com
         console.log('markerFound');
         if (confirm('画像が見つかりました！特典映像をどうぞ！')) {
           window.location = 'https://www.youtube.com/watch?v=jgLkrKGxATQ';
         }
-      });
-    },
+      })
+    }
   });
 </script>
 
@@ -45,7 +45,8 @@
   <a-scene
     vr-mode-ui='enabled: false;'
     renderer="logarithmicDepthBuffer: true;"
-    embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+    embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'
+  >
 
     <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
     <a-nft
