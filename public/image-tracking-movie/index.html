@@ -35,7 +35,7 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <a-assets>
-          <video id="penguin-sledding" autoplay loop="true" src="./assets/movie.mp4"></video>
+          <video id="penguin-sledding" autoplay muted loop="true" src="./assets/movie.mp4"></video>
         </a-assets>
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
@@ -47,7 +47,7 @@
             smoothTolerance='0.01'
             smoothThreshold='5'
           >
-          <a-video src="#penguin-sledding" width="480" height="270" position="0 0 -10" rotation="-90 0 0"></a-video>
+          <a-video src="#penguin-sledding" width="480" height="270" position="0 0 0" rotation="-90 0 0"></a-video>
         </a-nft>
 		<a-entity camera></a-entity>
     </a-scene>
