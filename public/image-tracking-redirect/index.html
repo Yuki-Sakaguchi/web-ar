@@ -26,9 +26,14 @@
   AFRAME.registerComponent('markerhandler', {
     init: function () {
       console.log('set');
+      let isSuccecc = false;
       this.el.sceneEl.addEventListener('markerFound', () => {
         // redirect to custom URL e.g. google.com
         console.log('markerFound');
+        if (isSuccecc) {
+          return;
+        }
+        isSuccecc = true;
         if (confirm('画像が見つかりました！特典映像をどうぞ！')) {
           window.location = 'https://www.youtube.com/watch?v=jgLkrKGxATQ';
         }
