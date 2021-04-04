@@ -21,7 +21,7 @@
 - [image-tracking-redirect](https://yuki-sakaguchi.github.io/web-ar/public/image-tracking-redirect/image.html)
   - AR.jsのイメージトラッキングで画像を認識したらリダイレクトさせる
   - [画像トラッキングのイベント](https://ar-js-org.github.io/AR.js-Docs/ui-events/#custom-events)はここを参考にした
-- [image-tracking-movie](https://yuki-sakaguchi.github.io/web-ar/public/image-tracking-redirect/image.html)
+- [image-tracking-movie](https://yuki-sakaguchi.github.io/web-ar/public/image-tracking-movie/image.html)
   - AR.jsのイメージトラッキングで画像を認識したら動画を表示させる
   - Youtubeは指定できないみたいなので、動画をmp4とかにしてサーバーにおく必要がある
 - [color-dropper](https://yuki-sakaguchi.github.io/web-ar/public/color-dropper/index.html)
