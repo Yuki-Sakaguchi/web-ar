@@ -264,6 +264,8 @@ function setVideo() {
               rotate = vRoutation + (multiPosition.rad - vRad);
               const s = vScale + (multiPosition.d - vD) * 0.001;
               scale = s >= 0.1 ? s : 0.1;
+              oukan.scale.set(scale);
+              oukan.rotation = rotate;
             }
           });
 
