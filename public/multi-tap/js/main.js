@@ -195,7 +195,7 @@ function setVideo() {
           let moveMode = false;
           let scaleMode = false;
           let basePosition = { x: 0, y: 0 };
-          let multiPosition = null;
+          let _multiPosition = null;
 
           // タップされた時の基準となる数値を保存する用の変数
           let vPosition = { x: 0, y: 0 };
@@ -222,12 +222,12 @@ function setVideo() {
               // マルチタップ
               moveMode = false;
               scaleMode = true;
-              multiPosition = event.data.originalEvent.targetTouches;
+              _multiPosition = event.data.originalEvent.targetTouches;
               setMultiPosition(
-                multiPosition[0].clientX,
-                multiPosition[0].clientY,
-                multiPosition[1].clientX,
-                multiPosition[1].clientY
+                _multiPosition[0].clientX,
+                _multiPosition[0].clientY,
+                _multiPosition[1].clientX,
+                _multiPosition[1].clientY
               );
               basePosition.x = oukan.position.x;
               basePosition.y = oukan.position.y;
@@ -251,12 +251,12 @@ function setVideo() {
               setPosition(basePosition.x + vx, basePosition.y + vy);
             } else if (scaleMode) {
               // マルチタップ
-              multiPosition = event.data.originalEvent.targetTouches;
+              _multiPosition = event.data.originalEvent.targetTouches;
               setMultiPosition(
-                multiPosition[0].clientX,
-                multiPosition[0].clientY,
-                multiPosition[1].clientX,
-                multiPosition[1].clientY
+                _multiPosition[0].clientX,
+                _multiPosition[0].clientY,
+                _multiPosition[1].clientX,
+                _multiPosition[1].clientY
               );
               const vx = multiPosition.p3.x - vPosition.x;
               const vy = multiPosition.p3.y - vPosition.y;
