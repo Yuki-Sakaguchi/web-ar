@@ -26,6 +26,9 @@
   - Youtubeは指定できないみたいなので、動画をmp4とかにしてサーバーにおく必要がある
 - [color-dropper](https://yuki-sakaguchi.github.io/web-ar/public/color-dropper/index.html)
   - カメラで色を取得する
+- [multi-tap](https://yuki-sakaguchi.github.io/web-ar/public/multi-tap/index.html?mode=test)
+  - スマホで複数タップで縮小、拡大、回転、移動ができるUI
+  - URLに `mode=test` があればヘルパーが表示される
 
 # 開発
 ```
