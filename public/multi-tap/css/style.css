@@ -137,3 +137,13 @@ body {
   margin: 8px auto;
   display: block;
 }
+
+.change-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: white;
+  padding: 8px 13px;
+  font-size: 12px;
+}

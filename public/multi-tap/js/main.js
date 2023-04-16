@@ -41,6 +41,8 @@ function init() {
     element.addEventListener("click", closeModal);
   });
 
+  document.getElementById("change", change);
+
   setCanvas();
   cameraHeight = window.innerHeight;
 
@@ -379,6 +381,23 @@ function closeModal() {
   saveImage = null;
   modal.querySelector("img").src = null;
   modal.classList.remove("active");
+}
+
+function change() {
+  if (stream !== null) {
+    stream.getVideoTracks().forEach((camera) => {
+      camera.stop();
+    });
+  }
+
+  objContainer.removeChild(videoSprite);
+
+  if (constraints.video.facingMode === "user") {
+    constraints.video.facingMode = { exact: "environment" };
+  } else {
+    constraints.video.facingMode = "user";
+  }
+  setVideo();
 }
 
 window.addEventListener("load", init);
