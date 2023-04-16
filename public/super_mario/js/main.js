@@ -150,6 +150,8 @@
     for (var i = 0; i < boxCount; i++) {
       createBox();
     }
+
+    render();
   }
 
   /**
@@ -375,6 +377,5 @@
     this.remove();
     star.loopPlay();
     init();
-    render();
   });
 })();
