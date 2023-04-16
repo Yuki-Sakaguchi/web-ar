@@ -94,7 +94,8 @@ Youtubeは指定できないみたいなので、動画をmp4とかにしてサ�
     <video src="https://user-images.githubusercontent.com/16290220/232305722-a26dcfee-857b-48d7-be0b-782494269045.mov" />
   </div>
 </details>
-スマホで2本の指で操作すると縮小、拡大、回転、移動ができるUI
+スマホでシングルタップだとオブジェクトを移動させる。  
+マルチタップだと縮小、拡大、回転、移動ができるUI  
 URLに `mode=test` があればヘルパーが表示されます
 
 # 開発メモ
