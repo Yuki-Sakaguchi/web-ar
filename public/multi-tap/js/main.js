@@ -393,10 +393,10 @@ function change() {
   objContainer.removeChild(videoSprite);
 
   if (constraints.video.facingMode === "user") {
-    cameraMode = true;
+    cameraMode = false;
     constraints.video.facingMode = { exact: "environment" };
   } else {
-    cameraMode = false;
+    cameraMode = true;
     constraints.video.facingMode = "user";
   }
   setVideo();
