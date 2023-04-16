@@ -41,7 +41,7 @@ function init() {
     element.addEventListener("click", closeModal);
   });
 
-  document.getElementById("change", change);
+  document.getElementById("change").addEventListener("click", change);
 
   setCanvas();
   cameraHeight = window.innerHeight;
