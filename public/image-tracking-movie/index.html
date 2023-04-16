@@ -1,4 +1,4 @@
-<script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 
 <style>
   .arjs-loader {
@@ -22,7 +22,7 @@
 </style>
 
 <!-- rawgithack development URL -->
-<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 <!-- rawgithack development URL -->
 <script>
   // AFRAME.registerComponent('markerhandler', {
@@ -36,38 +36,51 @@
   //     })
   //   }
   // });
-  window.addEventListener('touchstart', () => {
-    console.log('play');
+  window.addEventListener("touchstart", () => {
+    console.log("play");
     const video = document.querySelector("#penguin-sledding");
     video.play();
   });
 </script>
 
-<body style='margin : 0px; overflow: hidden;'>
-   <!-- minimal loader shown until image descriptors are loaded -->
+<body style="margin: 0px; overflow: hidden">
+  <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-    <a-scene
-        vr-mode-ui='enabled: false;'
-        renderer="logarithmicDepthBuffer: true;"
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  >
+    <a-assets>
+      <video
+        id="penguin-sledding"
+        autoplay
+        muted
+        loop="true"
+        src="./assets/movie.mp4"
+      ></video>
+    </a-assets>
 
-        <a-assets>
-          <video id="penguin-sledding" autoplay muted loop="true" src="./assets/movie.mp4"></video>
-        </a-assets>
-
-        <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-        <a-nft
-            type='nft'
-            url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/yuki-sakaguchi/web-ar/master/public/image-tracking/assets/images/cake'
-            smooth='true'
-            smoothCount='10'
-            smoothTolerance='0.01'
-            smoothThreshold='5'
-          >
-          <a-video src="#penguin-sledding" width="480" height="270" position="-90 0 0" rotation="-90 0 0"></a-video>
-        </a-nft>
-		<a-entity camera></a-entity>
-    </a-scene>
+    <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
+    <a-nft
+      type="nft"
+      url="https://yuki-sakaguchi.github.io/web-ar/master/public/image-tracking/assets/images/cake"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance="0.01"
+      smoothThreshold="5"
+    >
+      <a-video
+        src="#penguin-sledding"
+        width="480"
+        height="270"
+        position="-90 0 0"
+        rotation="-90 0 0"
+      ></a-video>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>

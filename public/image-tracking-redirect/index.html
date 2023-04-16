@@ -23,45 +23,45 @@
 
 <!-- rawgithack development URL -->
 <script>
-  AFRAME.registerComponent('markerhandler', {
+  AFRAME.registerComponent("markerhandler", {
     init: function () {
-      console.log('set');
+      console.log("set");
       let isSuccecc = false;
-      this.el.sceneEl.addEventListener('markerFound', () => {
+      this.el.sceneEl.addEventListener("markerFound", () => {
         // redirect to custom URL e.g. google.com
-        console.log('markerFound');
+        console.log("markerFound");
         if (isSuccecc) {
           return;
         }
         isSuccecc = true;
-        if (confirm('画像が見つかりました！特典映像をどうぞ！')) {
-          window.location = 'https://www.youtube.com/watch?v=jgLkrKGxATQ';
+        if (confirm("画像が見つかりました！特典映像をどうぞ！")) {
+          window.location = "https://www.youtube.com/watch?v=jgLkrKGxATQ";
         }
-      })
-    }
+      });
+    },
   });
 </script>
 
-<body style='margin : 0px; overflow: hidden;'>
+<body style="margin: 0px; overflow: hidden">
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
   <a-scene
-    vr-mode-ui='enabled: false;'
+    vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
-    embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
   >
-
     <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
     <a-nft
       markerhandler
-      type='nft'
-      url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/yuki-sakaguchi/web-ar/master/public/image-tracking/assets/images/cake'
-      smooth='true'
-      smoothCount='10'
-      smoothTolerance='0.01'
-      smoothThreshold='5'
+      type="nft"
+      url="https://yuki-sakaguchi.github.io/web-ar/master/public/image-tracking/assets/images/cake"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance="0.01"
+      smoothThreshold="5"
     >
     </a-nft>
     <a-entity camera></a-entity>
