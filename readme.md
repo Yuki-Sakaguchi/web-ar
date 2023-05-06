@@ -1,6 +1,8 @@
 # WebAR
-色々な WebAR を試しに作っています。  
-動かないものもあるかもしれません。
+色々な WebAR を実験しています。  
+
+基本的にはスマホ前提となります。  
+中には今は動かないものもあるかもしれません。  
 
 ## [green box](https://yuki-sakaguchi.github.io/web-ar/public/random_object/index.html)
 緑の箱が回ってるだけ
